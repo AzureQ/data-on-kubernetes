@@ -1,7 +1,3 @@
----
-description: Maintained by Qi Shao
----
-
 # Data On Kubernetes
 
 Exploration of data on Kubernetes.

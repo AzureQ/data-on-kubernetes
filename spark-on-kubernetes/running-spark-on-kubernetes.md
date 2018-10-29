@@ -1,4 +1,4 @@
-# Running Spark on Kubernetes
+# Example: Running Spark on Kubernetes
 
 ## Running Spark on Google Kubernetes Engine
 
