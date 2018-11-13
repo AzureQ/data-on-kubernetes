@@ -42,7 +42,11 @@ Build Spark 2.4 Docker Image, Spark 2.4 provides a Dockerfile which we can use d
 ```text
 $ cd spark-2.4.0-bin-hadoop2.7
 $ docker build -f ./kubernetes/dockerfiles/spark/Dockerfile . -t azureq/pantheon:spark-2.4
+$ docker build -f ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile . -t azureq/pantheon:pyspark-2.4 --build-arg base_img=azureq/pantheon:spark-2.4
+$ docker build -f ./kubernetes/dockerfiles/spark/bindings/R/Dockerfile . -t azureq/pantheon:rspark-2.4 --build-arg base_img=azureq/pantheon:spark-2.4
 $ docker push azureq/pantheon:spark-2.4
+$ docker push azureq/pantheon:pyspark-2.4
+$ docker push azureq/pantheon:rspark-2.4
 ```
 
 Now you have a Spark 2.4 docker image with GCS and Amazon S3 connector built in.
@@ -192,4 +196,43 @@ After the Job finished, you'll be able to see its event logs in Spark History Se
 ![](../.gitbook/assets/screen-shot-2018-11-12-at-7.25.49-pm.png)
 
 ![](../.gitbook/assets/screen-shot-2018-11-12-at-7.26.11-pm.png)
+
+### 4. More Examples: Submitting Python, R jobs
+
+Submitting a Python job using Docker image built before: `azureq/pantheon:pyspark-2.4`
+
+```text
+$ bin/spark-submit \
+    --master k8s://https://<Kubernetes Master> \
+    --deploy-mode cluster \
+    --name pyspark-example \
+    --conf spark.eventLog.enabled=true \
+    --conf spark.eventLog.dir=gs://spark-history-server/ \
+    --conf spark.executor.instances=5 \
+    --conf spark.kubernetes.container.image=azureq/pantheon:pyspark-2.4 \
+    --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark \
+    --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/etc/secrets/sparkonk8s.json \
+    --conf spark.kubernetes.driver.secrets.sparklogs=/etc/secrets \
+    --conf spark.kubernetes.executor.secrets.sparklogs=/etc/secrets \
+    local:///opt/spark/examples/src/main/python/pi.py \
+    100
+```
+
+Submitting an E job using Docker image built before: `azureq/pantheon:rspark-2.4`
+
+```text
+$ bin/spark-submit \
+    --master k8s://https://<Kubernetes Master> \
+    --deploy-mode cluster \
+    --name rspark-example \
+    --conf spark.eventLog.enabled=true \
+    --conf spark.eventLog.dir=gs://spark-history-server/ \
+    --conf spark.executor.instances=5 \
+    --conf spark.kubernetes.container.image=azureq/pantheon:rspark-2.4 \
+    --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark \
+    --conf spark.hadoop.google.cloud.auth.service.account.json.keyfile=/etc/secrets/sparkonk8s.json \
+    --conf spark.kubernetes.driver.secrets.sparklogs=/etc/secrets \
+    --conf spark.kubernetes.executor.secrets.sparklogs=/etc/secrets \
+    local:///opt/spark/examples/src/main/r/dataframe.R
+```
 
