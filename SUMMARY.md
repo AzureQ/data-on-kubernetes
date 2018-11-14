@@ -12,5 +12,4 @@
     * [Cluster: StatefulSet and Headless Service](kafka-on-kubernetes/design-kafka-deployment-in-a-kubernetes-way/statefulset-and-headless-service-for-kafka-and-zookeeper-cluster.md)
     * [Availability: Affinity, Anti-Affinity, PodDisruptionBudget](kafka-on-kubernetes/design-kafka-deployment-in-a-kubernetes-way/availability.md)
   * [Running Kafka On Kubernetes](kafka-on-kubernetes/untitled.md)
-* [Untitled](untitled.md)
 
