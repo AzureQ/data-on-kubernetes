@@ -5,7 +5,7 @@
   * [Architecture](kubernetes/architecture.md)
 * [Spark On Kubernetes](spark-on-kubernetes/README.md)
   * [Architecture](spark-on-kubernetes/architecture.md)
-  * [Example: Running Spark on Kubernetes](spark-on-kubernetes/running-spark-on-kubernetes.md)
+  * [Hands-on: Running Spark on Kubernetes](spark-on-kubernetes/running-spark-on-kubernetes.md)
 * [Kafka On Kubernetes](kafka-on-kubernetes/README.md)
   * [Architecture](kafka-on-kubernetes/architecture.md)
   * [Design Thinking](kafka-on-kubernetes/design-kafka-deployment-in-a-kubernetes-way/README.md)
