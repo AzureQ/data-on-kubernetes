@@ -86,8 +86,6 @@ sparkonk8s.json:  2302 bytes
 
 Next, we are going to construct the yml file for deploying a Spark History Server Pod, as you can see in the yml file, we created a [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) with previously created Spark docker image _**azureq/pantheon:spark-2.4**_, mounted GCS Service Account Secret _**sparkonk8s.json**_ to the Pod, configured the GCS bucket _**gs://spark-history-server**_ as the log directory. Also, we created a [Service](https://kubernetes.io/docs/concepts/services-networking/service/) to allow remote access.
 
-{% code-tabs %}
-{% code-tabs-item title="adsadas" %}
 ```yaml
 kind: Deployment
 apiVersion: apps/v1beta1
@@ -138,8 +136,6 @@ spec:
   selector:
     component: spark-history-server
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 Now, we can deploy Spark History Server Pod on GKE cluster.
 
