@@ -8,8 +8,11 @@ Starting from 2.4.0, Spark supports client mode for Kubernetes cluster backend ,
 
 Below is the yaml for an idle spark Pod in Kubernetes cluster as a "client" where we'll run `spark-shell` ,  and a Headless Service to provide a stable FQDN. According to Spark 2.4 [documentation](https://spark.apache.org/docs/latest/running-on-kubernetes.html#client-mode). It is recommended to assign your driver pod a sufficiently unique label and to use that label in the label selector of the headless service. 
 
-```text
+{% code-tabs %}
+{% code-tabs-item title="spark-client-mode-pod.yaml" %}
+```yaml
 apiVersion: apps/v1
+
 kind: Deployment
 metadata:
   name: spark-client-mode-deployment
@@ -62,10 +65,12 @@ spec:
     port: 7079
     targetPort: 7079
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Deploy the yaml file and check the status of the idle "client" Pod. 
 
-```text
+```bash
 $ kubectl apply -f client-mode-pod-spark.yaml
 deployment.apps/spark-client-mode-deployment created
 service/spark-client-mode-headless created
@@ -126,7 +131,7 @@ kubectl port-forward spark-client-mode-deployment-bb694bdf8-jglh7 4040:4040
 
 ## More Examples: pyspark, sparkR
 
-Running `pyspark`in a pod with image `azureq/pantheon:pyspark-2.4`
+Create a pod with image `azureq/pantheon:pyspark-2.4`using previous `spark-client-mode-pod.yaml` and run `pyspark`in it.
 
 ```text
 $ bin/pyspark \
@@ -144,7 +149,7 @@ $ bin/pyspark \
     --conf spark.driver.pod.name=spark-client-mode-headless
 ```
 
-Running `sparkR` a pod with image `azureq/pantheon:rspark-2.4`
+Create a pod with image `azureq/pantheon:rspark-2.4`using previous `spark-client-mode-pod.yaml` and run `sparkR`in it.
 
 ```text
 $ bin/sparkR\
