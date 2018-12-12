@@ -14,7 +14,6 @@ Below is the yaml for an idle spark Pod in Kubernetes cluster as a "client" wher
 {% code-tabs-item title="spark-client-mode-pod.yaml" %}
 ```yaml
 apiVersion: apps/v1
-
 kind: Deployment
 metadata:
   name: spark-client-mode-deployment
