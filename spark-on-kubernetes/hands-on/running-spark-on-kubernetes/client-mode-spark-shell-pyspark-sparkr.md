@@ -1,5 +1,7 @@
 # Client Mode: spark-shell, pyspark, sparkR
 
+## Setup interactive spark-shell in Kubernetes
+
 ![](../../../.gitbook/assets/screen-shot-2018-11-14-at-5.02.33-pm.png)
 
 Starting from 2.4.0, Spark supports client mode for Kubernetes cluster backend , which allows users to run interactive tools such as spark-shell or notebooks **in a pod running in a Kubernetes cluster** or **on a client machine outside a cluster.**

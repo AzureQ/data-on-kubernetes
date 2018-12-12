@@ -9,7 +9,7 @@
     * [Basic tryout: Running Spark on Kubernetes](spark-on-kubernetes/hands-on/running-spark-on-kubernetes/README.md)
       * [Preparation](spark-on-kubernetes/hands-on/running-spark-on-kubernetes/preparation.md)
       * [Setup Spark History Server](spark-on-kubernetes/hands-on/running-spark-on-kubernetes/setup-spark-history-server.md)
-      * [Submitting Spark Jobs](spark-on-kubernetes/hands-on/running-spark-on-kubernetes/submitting-spark-jobs.md)
+      * [Cluster Mode: spark-submit](spark-on-kubernetes/hands-on/running-spark-on-kubernetes/submitting-spark-jobs.md)
       * [Client Mode: spark-shell, pyspark, sparkR](spark-on-kubernetes/hands-on/running-spark-on-kubernetes/client-mode-spark-shell-pyspark-sparkr.md)
     * [Interactive Analysis: Jupyter Notebook](spark-on-kubernetes/hands-on/interactive-analysis-jupyter-notebook/README.md)
       * [Deploy Jupyter Notebook on Kubernetes](spark-on-kubernetes/hands-on/interactive-analysis-jupyter-notebook/deploy-jupyter-notebook-on-kubernetes.md)

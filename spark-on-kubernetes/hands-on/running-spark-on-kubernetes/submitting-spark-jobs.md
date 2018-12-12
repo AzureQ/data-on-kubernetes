@@ -1,4 +1,4 @@
-# Submitting Spark Jobs
+# Cluster Mode: spark-submit
 
 ## Submit a Spark Job with event logging enabled and log events to GCS bucket
 
