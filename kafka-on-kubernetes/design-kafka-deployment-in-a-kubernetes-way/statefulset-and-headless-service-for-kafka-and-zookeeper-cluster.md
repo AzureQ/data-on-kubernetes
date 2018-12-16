@@ -1,6 +1,6 @@
 # Cluster: StatefulSet and Headless Service
 
-![StatefulSet for Kafka and Zookeeper](../../.gitbook/assets/screen-shot-2018-05-28-at-7.30.07-pm.png)
+![StatefulSet of Zookeeper and Kafka](../../.gitbook/assets/screen-shot-2018-12-16-at-3.33.33-pm.png)
 
 [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) is the workload API object used to manage stateful applications. It manages the deployment and scaling of a set of [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/), and provides guarantees about the ordering and uniqueness of these Pods.
 
