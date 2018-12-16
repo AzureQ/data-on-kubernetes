@@ -31,7 +31,5 @@ However, it is not designed to provide a general solution that works for all sta
 
 In either way, Kafka cluster and Zookeeper will be deployed across Kubernetes worker nodes.
 
-![Kafka On Kubernetes Architecture](../.gitbook/assets/screen-shot-2018-05-28-at-3.46.05-pm.png)
-
-
+![Apache Kafka on Kubernetes](../.gitbook/assets/screen-shot-2018-12-16-at-3.56.08-pm.png)
 
