@@ -22,9 +22,8 @@ Download [Google Cloud Storage Connector for Hadoop 2.x](https://cloud.google.co
 ```text
 $ curl -O https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-latest-hadoop2.jar
 $ curl -O http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.7.3/hadoop-aws-2.7.3.jar
-$ curl -O https://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip
-$ unzip aws-java-sdk.zip
-$ cp gcs-connector-latest-hadoop2.jar hadoop-aws-2.7.3.jar aws-java-sdk-1.11.447/lib/aws-java-sdk-1.11.447.jar spark-2.4.0-bin-hadoop2.7/jars/
+$ curl -O http://central.maven.org/maven2/com/amazonaws/aws-java-sdk/1.7.4/aws-java-sdk-1.7.4.jar
+$ cp gcs-connector-latest-hadoop2.jar hadoop-aws-2.7.3.jar aws-java-sdk-1.7.4.jar spark-2.4.0-bin-hadoop2.7/jars/
 ```
 
 Build Spark 2.4 Docker Image, Spark 2.4 provides a Dockerfile which we can use directly to build docker images. Please refer to [Docker Doc](https://docs.docker.com/) about how to install docker on your local laptop and Create Docker ID. Once the image is built, we need to push it to Docker Registry such as [Docker Hub](https://hub.docker.com/), [Google Container Registry](https://cloud.google.com/container-registry/), [Harbor](https://github.com/vmware/harbor), etc.
